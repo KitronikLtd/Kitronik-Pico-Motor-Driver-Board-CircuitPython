@@ -9,7 +9,7 @@ To use save PicoMotorDriver.py file onto the Pico in the libs directory so it ca
 
 ## Import PicoMotorDriver.py and construct an instance:
     import PicoMotorDriver
-    board = PicoMotorDriver.KitronikPicoMotor()
+    motor_board = PicoMotorDriver.KitronikPicoMotor()
 This will setup the correct pins to drive the motors. 
 
 ## Drive a motor:
@@ -20,21 +20,21 @@ where:
 * speed => 0 to 100
 
 ## Stop a motor:
-    board.motorOff(motor)
+    motor_board.motorOff(motor)
 where:
 * motor => 1 or 2
 
 ## Drive a Stepper:
-    board.step(direction,steps)
+    motor_board.step(direction,steps)
 where:
 * direction => f or r
 * steps => how many steps to make
 
 ### To step an angle:
-    stepAngle(direction, angle)
+    motor_board.stepAngle(direction, angle)
 where
 * direction => f or r
-* steps => how many steps to make
+* angle => how many degrees to move
 
 The stepper code assumes 200 steps per rev (1.8 degrees resolution) and only does full steps. 
 There are defaulted parameters for 
